@@ -17,22 +17,27 @@ public class MailSpec {
     private final List<String> cc;
     private final List<String> bcc;
     private final String subject;
-    private final String text;
+    private final String template;
     private final Map<String, String> headers;
     private final boolean html;
+    private final Map<String, Object> templateValues;
+    private final String inReplyTo;
 
     MailSpec(String from, String replyTo, List<String> to, List<String> cc, List<String> bcc,
-                    String subject,
-                    String text, Map<String, String> headers, boolean html) {
+             String subject,
+             String template, Map<String, String> headers, boolean html,
+             Map<String, Object> templateValues, String inReplyTo) {
         this.from = from;
         this.replyTo = replyTo;
         this.to = (to != null) ? Collections.unmodifiableList(to) : Collections.emptyList();
         this.cc = (cc != null) ? Collections.unmodifiableList(cc) : Collections.emptyList();
         this.bcc = (bcc != null) ? Collections.unmodifiableList(bcc) : Collections.emptyList();
         this.subject = (subject != null) ? subject : "";
-        this.text = (text != null) ? text : "";
+        this.template = (template != null) ? template : "";
         this.headers = (headers == null) ? Collections.emptyMap() : Collections.unmodifiableMap(headers);
         this.html = html;
+        this.templateValues = (templateValues == null) ? Collections.emptyMap() : Collections.unmodifiableMap(templateValues);
+        this.inReplyTo = inReplyTo;
     }
 
     public String getFrom() {
@@ -55,8 +60,8 @@ public class MailSpec {
         return subject;
     }
 
-    public String getText() {
-        return text;
+    public String getTemplate() {
+        return template;
     }
 
     public Map<String, String> getHeaders() {
@@ -69,5 +74,13 @@ public class MailSpec {
 
     public String getReplyTo() {
         return replyTo;
+    }
+
+    public Map<String, Object> getTemplateValues() {
+        return templateValues;
+    }
+
+    public String getInReplyTo() {
+        return inReplyTo;
     }
 }
