@@ -1,0 +1,5 @@
+image:https://travis-ci.org/rgielen/spring-mail-toolbox.svg?branch=master["Build Status", link="https://travis-ci.org/rgielen/spring-mail-toolbox"]
+
+== Spring Mail Toolbox
+
+A library to help craft and send email messages with Spring.
