@@ -13,5 +13,34 @@
     <artifactId>spring-mail-toolbox</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <name>spring-mail-toolbox</name>
+    <description>
+        A library to help craft and send email messages with Spring.
+    </description>
+    <url>https://github.com/rgielen/spring-mail-toolbox</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>René Gielen</name>
+            <url>https://github.com/rgielen</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/rgielen/spring-mail-toolbox</url>
+        <connection>scm:git:git@github.com:rgielen/spring-mail-toolbox.git</connection>
+        <developerConnection>scm:git:git@github.com:rgielen/spring-mail-toolbox.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <spring-framework.version>5.2.10.RELEASE</spring-framework.version>
+    </properties>
 
 </project>
