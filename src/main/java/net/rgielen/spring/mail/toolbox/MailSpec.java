@@ -21,16 +21,16 @@ public class MailSpec {
     private final Map<String, String> headers;
     private final boolean html;
 
-    public MailSpec(String from, String replyTo, List<String> to, List<String> cc, List<String> bcc,
+    MailSpec(String from, String replyTo, List<String> to, List<String> cc, List<String> bcc,
                     String subject,
                     String text, Map<String, String> headers, boolean html) {
         this.from = from;
         this.replyTo = replyTo;
-        this.to = (to == null) ? Collections.emptyList() : Collections.unmodifiableList(to);
-        this.cc = (cc == null) ? Collections.emptyList() : Collections.unmodifiableList(cc);
-        this.bcc = (bcc == null) ? Collections.emptyList() : Collections.unmodifiableList(bcc);
-        this.subject = subject;
-        this.text = text;
+        this.to = (to != null) ? Collections.unmodifiableList(to) : Collections.emptyList();
+        this.cc = (cc != null) ? Collections.unmodifiableList(cc) : Collections.emptyList();
+        this.bcc = (bcc != null) ? Collections.unmodifiableList(bcc) : Collections.emptyList();
+        this.subject = (subject != null) ? subject : "";
+        this.text = (text != null) ? text : "";
         this.headers = (headers == null) ? Collections.emptyMap() : Collections.unmodifiableMap(headers);
         this.html = html;
     }
