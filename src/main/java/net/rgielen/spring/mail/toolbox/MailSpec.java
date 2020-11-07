@@ -23,7 +23,7 @@ public class MailSpec {
     private final Map<String, Object> templateValues;
     private final String inReplyTo;
 
-    MailSpec(String from, String replyTo, List<String> to, List<String> cc, List<String> bcc,
+    protected MailSpec(String from, String replyTo, List<String> to, List<String> cc, List<String> bcc,
              String subject,
              String template, Map<String, String> headers, boolean html,
              Map<String, Object> templateValues, String inReplyTo) {
@@ -82,5 +82,22 @@ public class MailSpec {
 
     public String getInReplyTo() {
         return inReplyTo;
+    }
+
+    @Override
+    public String toString() {
+        return "MailSpec{" +
+                "from='" + from + '\'' +
+                ", replyTo='" + replyTo + '\'' +
+                ", to=" + to +
+                ", cc=" + cc +
+                ", bcc=" + bcc +
+                ", subject='" + subject + '\'' +
+                ", template='" + template + '\'' +
+                ", headers=" + headers +
+                ", html=" + html +
+                ", templateValues=" + templateValues +
+                ", inReplyTo='" + inReplyTo + '\'' +
+                '}';
     }
 }
